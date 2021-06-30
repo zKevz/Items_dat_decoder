@@ -199,6 +199,12 @@ namespace IDecoder
 					}
 					punchOptions = Encoding.UTF8.GetString(punchOptionsb);
 				}
+		    if (itemsDatVersion >= 12) {
+			    Mempos += 13;
+		    }
+		    if (itemsDatVersion >= 13) {
+			    Mempos += 4;
+		    }
 				JObject jObj = new JObject(
 					new JProperty("itemid", itemID),
 					new JProperty("editabletype",editabletype),
